@@ -1,8 +1,5 @@
-import 'package:flutter/material.dart';
-import 'fooderlich_theme.dart';
-import 'circle_image.dart';
-
-class AuthorCard extends StatefulWidget {
+/*
+class AuthorCard extends StatelessWidget {
   // 1
   final String authorName;
   final String title;
@@ -14,13 +11,6 @@ class AuthorCard extends StatefulWidget {
     required this.title,
     this.imageProvider,
   }) : super(key: key);
-
-  @override
-  State<AuthorCard> createState() => _AuthorCardState();
-}
-
-class _AuthorCardState extends State<AuthorCard> {
-  bool _isFavorited = false;
 
   // 2
   @override
@@ -35,7 +25,7 @@ class _AuthorCardState extends State<AuthorCard> {
           Row(
             children: [
               CircleImage(
-                imageProvider: widget.imageProvider,
+                imageProvider: imageProvider,
                 imageRadius: 28,
               ),
               // 2
@@ -46,11 +36,11 @@ class _AuthorCardState extends State<AuthorCard> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    widget.authorName,
+                    authorName,
                     style: FooderlichTheme.lightTextTheme.headline2,
                   ),
                   Text(
-                    widget.title,
+                    title,
                     style: FooderlichTheme.lightTextTheme.headline3,
                   )
                 ],
@@ -58,20 +48,18 @@ class _AuthorCardState extends State<AuthorCard> {
             ],
           ),
           IconButton(
-            // 1
-            icon: Icon(_isFavorited ? Icons.favorite : Icons.favorite_border),
-            iconSize: 30,
-            // 2
-            color: Colors.red[400],
-            onPressed: () {
-              // 3
-              setState(() {
-                _isFavorited = !_isFavorited;
-              });
-            },
-          ),
+              // 4
+              icon: const Icon(Icons.favorite_border),
+              iconSize: 30,
+              color: Colors.grey[400],
+              // 5
+              onPressed: () {
+                const snackBar = SnackBar(content: Text('Favorite Pressed'));
+                ScaffoldMessenger.of(context).showSnackBar(snackBar);
+              }),
         ],
       ),
     );
   }
 }
+*/
